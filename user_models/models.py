@@ -37,7 +37,8 @@ class Doctor(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     patients = models.ManyToManyField(People, 
                                       through="DoctorPatients",
-                                      through_fields=("doctor", "patient"))
+                                      through_fields=("doctor", "patient")
+                                      )
     def __str__(self):
         return self.name + " " + self.field
   
